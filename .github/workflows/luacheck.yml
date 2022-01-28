@@ -22,3 +22,8 @@ jobs:
     - uses: leafo/gh-actions-luarocks@v4
     - run: luarocks install luacheck
     - run: luacheck .
+    - uses: puria/action-luacheck@v1
+      with:
+        github_token: '${{ github.token }}'
+        workdir: src
+        reporter: github-pr-review
