@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2022 Puria Nafisi Azizi <puria@dyne.org>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+name: Busted
+
+on: [push, pull_request]
+
+jobs:
+
+  busted:
+    strategy:
+      fail-fast: false
+      matrix:
+        lua-version: ["5.4", "5.3", "5.2", "5.1", "luajit"]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: leafo/gh-actions-lua@v8
+      with:
+        luaVersion: ${{ matrix.lua-version }}
+    - uses: leafo/gh-actions-luarocks@v4
+    - name: Setup dependencies
+      run: |
+        luarocks install busted
+        luarocks install luacov-coveralls
+    - run: busted -c -v
+    - name: Report test coverage
+      if: success()
+      continue-on-error: true
+      run: luacov-coveralls -i src/luacheck -e .luarocks
+      env:
+        COVERALLS_REPO_TOKEN: ${{ github.token }}

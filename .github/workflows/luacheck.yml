@@ -1,0 +1,24 @@
+# SPDX-FileCopyrightText: 2022 Puria Nafisi Azizi <puria@dyne.org>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+name: Luacheck
+
+on: [push, pull_request]
+
+jobs:
+
+  luacheck:
+    strategy:
+      fail-fast: false
+      matrix:
+        lua-version: ["5.4", "5.3", "5.2", "5.1", "luajit", "luajit-openresty"]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: leafo/gh-actions-lua@v8
+      with:
+        luaVersion: ${{ matrix.lua-version }}
+    - uses: leafo/gh-actions-luarocks@v4
+    - run: luarocks install luacheck
+    - run: luacheck .

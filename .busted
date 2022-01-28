@@ -1,0 +1,11 @@
+-- SPDX-FileCopyrightText: 2022 Puria Nafisi Azizi <puria@dyne.org>
+--
+-- SPDX-License-Identifier: AGPL-3.0-or-later
+
+return {
+  default = {
+    verbose = true,
+    output = "gtest"
+  }
+}
+-- vim: ft=lua
