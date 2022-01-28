@@ -24,6 +24,7 @@ jobs:
       run: |
         luarocks install busted
         luarocks install luacov-coveralls
+    - run: luarocks build
     - run: busted -c -v
     - name: Report test coverage
       if: success()
