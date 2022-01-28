@@ -1,3 +1,7 @@
+-- SPDX-FileCopyrightText: 2022 Puria Nafisi Azizi <puria@dyne.org>
+--
+-- SPDX-License-Identifier: AGPL-3.0-or-later
+
 package = "lua-starter-template"
 version = "dev-1"
 source = {
