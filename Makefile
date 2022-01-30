@@ -22,6 +22,7 @@ deps: ## 📦 install dependencies for development
 	${ROCKS} install busted
 	${ROCKS} install luacheck
 	${ROCKS} install luacov
+	${ROCKS} install ldoc
 	python3 -m pip install --user pipx
 
 .PHONY: build
@@ -46,8 +47,12 @@ lint: ## 🚨 execute luacheck and reuse tool license compliancy
 
 .PHONY: clean
 clean: ## 🧹 clean build garbage
-	rm -rf luacov.stats.out luacov.report.out
+	rm -rf luacov.stats.out luacov.report.out docs/out/*
 
 .PHONY: deepclean
 deepclean: ## 💣 clean every thing
 	rm -rf ${LUA_TREE} lua luarocks .luarocks luacov.stats.out luacov.report.out
+
+.PHONY: docs
+docs: ## 📝 generate documentation with ldoc
+	${BIN}/ldoc -c ./docs/config.ld .

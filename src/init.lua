@@ -4,6 +4,9 @@
 
 local M = {}
 
+--- hello welcomes you.
+-- It is a specialized operation on a string.
+-- @return the most honest thing
 function M.hello()
   return "world"
 end
