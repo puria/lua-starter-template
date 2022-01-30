@@ -11,6 +11,9 @@ description = {
    homepage = "https://github.com/puria/lua-starter-template",
    license = "AGPL-3"
 }
+dependencies = {
+   'lua >= 5.1',
+}
 build = {
    type = "builtin",
    modules = {
