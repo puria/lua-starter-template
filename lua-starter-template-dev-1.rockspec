@@ -8,7 +8,7 @@ source = {
    url = "https://github.com/puria/lua-starter-template"
 }
 description = {
-   homepage = "https://github.com/puria/lua-starter-template"
+   homepage = "https://github.com/puria/lua-starter-template",
    license = "AGPL-3"
 }
 build = {
