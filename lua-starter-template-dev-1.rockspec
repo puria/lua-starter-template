@@ -14,6 +14,6 @@ description = {
 build = {
    type = "builtin",
    modules = {
-      starter = "src/init.lua"
+      ['lua-starter-template'] = "src/init.lua"
    }
 }

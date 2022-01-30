@@ -1,0 +1,12 @@
+return {
+  runreport = true,
+  deletestats = true,
+
+  ['exclude'] = {
+    'spec',
+    'luarocks',
+    'lua_modules',
+  },
+
+
+}

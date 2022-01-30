@@ -49,3 +49,4 @@ luac.out
 /lua
 /lua_modules
 /.luarocks
+/.env
