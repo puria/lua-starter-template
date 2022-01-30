@@ -5,15 +5,15 @@
 package = "lua-starter-template"
 version = "dev-1"
 source = {
-   url = "*** please add URL for source tarball, zip or repository here ***"
+   url = "https://github.com/puria/lua-starter-template"
 }
 description = {
-   homepage = "*** please enter a project homepage ***",
-   license = "*** please specify a license ***"
+   homepage = "https://github.com/puria/lua-starter-template",
+   license = "AGPL-3"
 }
 build = {
    type = "builtin",
    modules = {
-      starter = "src/init.lua"
+      ['lua-starter-template'] = "src/init.lua"
    }
 }
