@@ -1,0 +1,12 @@
+project = "lua-starter-template"
+description = "Project bootstrapped with lua-starter-template"
+title = "Reference"
+format='discount'
+template="."
+style="."
+file='../src/'
+dir='./out'
+sort=true
+sort_modules=true
+not_luadoc=true
+all=false
